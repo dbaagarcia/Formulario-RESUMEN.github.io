@@ -1,22 +1,34 @@
+let operador = function(){
+    switch (operadorAleatorio) {
+        case 0:
+            return "+";
+        case 1:
+            return "-";
+        case 2:
+            return "*";
+        case 3:
+            return "/";
+    }
+}
 
 let random = () => Math.floor(Math.random() * 10) + 1;
 const num1 = random()
 const num2 = random()
-const operadores = ["+", "-", "*", "/"];
-const operadorAleatorio = operadores[Math.floor(Math.random() * operadores.length)]
+const operadorAleatorio = Math.floor(Math.random() * 4)
 document.getElementById("num1").innerHTML = num1;
 document.getElementById("num2").innerHTML = num2;
-document.getElementById("operation").innerHTML = operadorAleatorio;
+document.getElementById("operation").innerHTML = operador()
+
 var realizarOperacion = function () {
     let resultado = 0
     switch (operadorAleatorio) {
-        case "+":
+        case 0:
             return resultado = num1 + num2;
-        case "-":
+        case 1:
             return resultado = num1 - num2;
-        case "*":
+        case 2:
             return resultado = num1 * num2;
-        case "/":
+        case 3:
             return resultado = num1 / num2;
         default:
             console.log("Operador no válido.");
